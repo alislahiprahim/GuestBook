@@ -1,0 +1,80 @@
+<div class="container mx-auto mt-5" *ngFor="let gb of GuestbooksArr">
+  <div class="box text-center">
+    <div class="text-center py-3">
+      <h2>{{ gb.title }}</h2>
+      <a href="{{ gb.url }}">{{ gb.url }}</a>
+
+      <h3 class="my-3">Messages</h3>
+      <div class="container" *ngFor="let m of gb.messages">
+        <div class="row">
+          <div class="col-3"><h6>NAME :</h6></div>
+          <div class="col-3">
+            <p>{{ m.name }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3"><h6>EMAIL :</h6></div>
+          <div class="col-3">
+            <p>{{ m.email }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3"><h6>Message :</h6></div>
+          <div class="col-3">
+            <p>{{ m.body }}</p>
+          </div>
+        </div>
+        <h5>--------------------------------------------------------</h5>
+      </div>
+    </div>
+
+    <div class="btnbox">
+      <div class="btn btn-primary mx-1" (click)="open(content)">
+        Write message
+
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Write message</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="d('Cross click')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input
+              class="form-control"
+              placeholder="name"
+              type="text"
+              [(ngModel)]="name"
+            />
+            <input
+              class="form-control"
+              placeholder="email"
+              type="text"
+              [(ngModel)]="email"
+            />
+            <input
+              class="form-control"
+              placeholder="your message"
+              type="text"
+              [(ngModel)]="body"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              (click)="[c('Save click'), saveMessage(gb._id)]"
+            >
+              Save
+            </button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

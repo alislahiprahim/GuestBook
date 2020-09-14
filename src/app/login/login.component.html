@@ -1,0 +1,27 @@
+<div class="containter mx-auto">
+    <div class="header mx-auto text-center py-2">
+      <h1>Login</h1>
+    </div>
+    <div class="body container">
+      <div class="py-1 mx-auto">
+        <input
+          class="form-control"
+          placeholder="Your Email"
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="py-1 mx-auto">
+        <input
+          class="form-control"
+          placeholder="Your Password"
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="py-1 mx-auto">
+        <button class="form-control btn btn-success" (click)="login()">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+  

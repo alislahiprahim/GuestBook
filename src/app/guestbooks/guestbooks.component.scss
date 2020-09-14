@@ -1,0 +1,29 @@
+.box {
+  height: auto;
+  width: auto;
+  position: relative;
+  background-color: rgb(10, 4, 4);
+}
+
+.btnbox {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.messages {
+  background-color: green;
+  width: auto;
+  height: 130px;
+  z-index: 123;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6,
+p {
+  color: rgb(181, 182, 184);
+}
+
